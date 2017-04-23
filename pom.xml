@@ -21,6 +21,7 @@
         <module>springboot-dubbo-provider</module>
         <module>springboot-dubbo-consumer</module>
         <module>springboot-mybatis-multidatasource</module>
+        <module>springboot-redis-cluster</module>
     </modules>
 
     <properties>
@@ -33,12 +34,14 @@
         <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
         <mybatis.version>3.4.4</mybatis.version>
         <driud.version>1.0.29</driud.version>
+        <jedis.version>2.9.0</jedis.version>
+        <spring-data-redis.version>1.8.3.RELEASE</spring-data-redis.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.RELEASE</version>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>1.5.2.RELEASE</version>
     </parent>
 
     <dependencyManagement>
@@ -98,6 +101,16 @@
                 <artifactId>druid</artifactId>
                 <version>${driud.version}</version>
             </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${spring-data-redis.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -106,6 +119,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
