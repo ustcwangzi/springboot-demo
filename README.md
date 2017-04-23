@@ -1,3 +1,4 @@
 # springboot-demo
-springboot demo
--springboot-mybatis-multidatasource：Springboot和Mybatis多数据源
+springboot demo：Springboot项目
+-springboot-mybatis-multidatasource：Mybatis多数据源
+-springboot-redis-cluster：Redis集群
