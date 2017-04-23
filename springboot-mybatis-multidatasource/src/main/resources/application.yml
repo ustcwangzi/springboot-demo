@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/testdb1?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      minIdle: 1
+      maxActive: 100
+      initialSize: 10
+      timeBetweenEvictionRunsMillis: 3000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+    secondary:
+      url: jdbc:mysql://localhost:3306/testdb2?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      minIdle: 1
+      maxActive: 100
+      initialSize: 10
+      timeBetweenEvictionRunsMillis: 3000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+
+mybatis:
+  primary:
+    mapperLocations: classpath*:com/wz/mapper/primary/*.xml
+    typeAliasesPackage: com.wz.model
+  secondary:
+    mapperLocations: classpath*:com/wz/mapper/secondary/*.xml
+    typeAliasesPackage: com.wz.model
+
+server:
+  port: 9001

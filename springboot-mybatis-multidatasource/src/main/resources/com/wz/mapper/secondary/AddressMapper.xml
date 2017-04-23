@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wz.mapper.secondary.AddressMapper">
+    <resultMap id="BaseResultMap" type="com.wz.model.Address" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="province" property="province" jdbcType="VARCHAR" />
+        <result column="city" property="city" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="queryByPrimaryKey" resultMap="BaseResultMap">
+        select id,province,city from address where id = #{id}
+    </select>
+
+    <select id="queryByProvince" resultMap="BaseResultMap">
+        select id,province,city from address where province = #{province}
+    </select>
+</mapper>
