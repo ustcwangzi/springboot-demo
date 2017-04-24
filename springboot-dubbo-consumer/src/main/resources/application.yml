@@ -1,0 +1,11 @@
+## Dubbo 服务消费者配置
+spring:
+  dubbo:
+    application:
+      name: dubbo-demo-consumer
+    scan: com.wz.service
+    registry:
+      address: zookeeper://127.0.0.1:2181
+
+server:
+  port: 9005
