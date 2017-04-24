@@ -1,0 +1,13 @@
+dubbo:
+  application:
+    name: dubbo-demo-two-provider
+  annotation:
+    package: com.wz.service
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+    register: true
+    subscribe: true
+
+server:
+  port: 9007

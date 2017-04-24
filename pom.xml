@@ -23,6 +23,9 @@
         <module>springboot-mybatis-multidatasource</module>
         <module>springboot-redis-cluster</module>
         <module>springboot-aop</module>
+        <module>springboot-dubbo-two-provider</module>
+        <module>springboot-dubbo-two-common</module>
+        <module>springboot-dubbo-two-consumer</module>
     </modules>
 
     <properties>
