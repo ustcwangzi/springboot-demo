@@ -26,6 +26,8 @@
         <module>springboot-dubbo-two-provider</module>
         <module>springboot-dubbo-two-common</module>
         <module>springboot-dubbo-two-consumer</module>
+        <module>springboot-rocketmq-consumer</module>
+        <module>springboot-rocketmq-producer</module>
     </modules>
 
     <properties>
@@ -40,6 +42,7 @@
         <driud.version>1.0.29</driud.version>
         <jedis.version>2.9.0</jedis.version>
         <spring-data-redis.version>1.8.3.RELEASE</spring-data-redis.version>
+        <rocketmq-client.version>3.6.2.Final</rocketmq-client.version>
     </properties>
 
     <parent>
@@ -114,6 +117,11 @@
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-redis</artifactId>
                 <version>${spring-data-redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>${rocketmq-client.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

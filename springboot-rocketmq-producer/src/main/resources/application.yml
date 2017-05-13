@@ -1,0 +1,9 @@
+server:
+  port: 9008
+
+mq:
+  nameServerAddress: 10.10.45.32:9876;10.10.45.132:9876
+  producerGroup: TestProducerGroup
+  instanceName: TestProducer
+  topic: TESTTOPIC
+  tag: wz

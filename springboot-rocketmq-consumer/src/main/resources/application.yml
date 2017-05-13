@@ -1,0 +1,6 @@
+server:
+  port: 9009
+
+mq:
+  nameServerAddress: 10.10.45.32:9876;10.10.45.132:9876
+  subscriberID: TestConsuemr
