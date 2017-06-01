@@ -1,6 +1,3 @@
-org.springframework.context.ApplicationContextInitializer=\
-com.wz.config.DubboConfigurationApplicationContextInitializer
-org.springframework.context.ApplicationListener=\
-com.wz.config.DubboHolderListener
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.wz.config.DubboAutoConfiguration
+org.springframework.context.ApplicationContextInitializer=com.wz.config.DubboConfigurationApplicationContextInitializer
+org.springframework.context.ApplicationListener=com.wz.config.DubboHolderListener
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.wz.config.DubboAutoConfiguration
