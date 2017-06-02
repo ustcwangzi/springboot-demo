@@ -1,7 +1,6 @@
 package com.wz.config;
 
 import com.alibaba.dubbo.config.*;
-import com.alibaba.dubbo.config.spring.AnnotationBean;
 import com.alibaba.dubbo.rpc.Exporter;
 import com.alibaba.dubbo.rpc.Invoker;
 import org.springframework.beans.factory.annotation.Value;
