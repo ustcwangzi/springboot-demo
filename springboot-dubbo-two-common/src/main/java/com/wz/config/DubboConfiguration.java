@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnClass(Exporter.class)
-public class DubboProviderConfiguration {
+public class DubboConfiguration {
     @Value("${dubbo.application.name}")
     private String applicationName;
 
@@ -53,20 +53,17 @@ public class DubboProviderConfiguration {
 
     /**
      * 注入dubbo上下文
-     *
      * @return
      */
     @Bean
     public ApplicationConfig applicationConfig() {
-        // 当前应用配置
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName(this.applicationName);
+        applicationConfig.setName(applicationName);
         return applicationConfig;
     }
 
     /**
-     * 注入dubbo注册中心配置,基于zookeeper
-     *
+     * 注入dubbo注册中心配置
      * @return
      */
     @Bean
@@ -80,7 +77,6 @@ public class DubboProviderConfiguration {
 
     /**
      * 默认基于dubbo协议提供服务
-     *
      * @return
      */
     @Bean
@@ -96,13 +92,12 @@ public class DubboProviderConfiguration {
 
     /**
      * dubbo服务提供
-     *
      * @param applicationConfig
      * @param registryConfig
      * @param protocolConfig
      * @return
      */
-    @Bean(name="myProvider")
+    @Bean
     public ProviderConfig providerConfig(ApplicationConfig applicationConfig, RegistryConfig registryConfig, ProtocolConfig protocolConfig) {
         ProviderConfig providerConfig = new ProviderConfig();
         providerConfig.setTimeout(timeout);
@@ -116,10 +111,9 @@ public class DubboProviderConfiguration {
 
     /**
      * dubbo消费
-     *
      * @return
      */
-    @Bean(name="defaultConsumer")
+    @Bean
     @ConditionalOnClass(Invoker.class)
     public ConsumerConfig providerConfig() {
         ConsumerConfig consumerConfig = new ConsumerConfig();

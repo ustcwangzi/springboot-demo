@@ -3,6 +3,14 @@ dubbo:
     name: dubbo-demo-two-provider
   annotation:
     package: com.wz.service
+  protocol:
+    name: dubbo
+    port: 20880
+    accessLog: true
+  provider:
+    timeout: 3000
+    retries: 1
+    delay: -1
   registry:
     protocol: zookeeper
     address: 127.0.0.1:2181

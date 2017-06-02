@@ -1,4 +1,4 @@
-package com.wz;
+package com.wz.api;
 
 /**
  * Created by wangzi on 2017/4/21.

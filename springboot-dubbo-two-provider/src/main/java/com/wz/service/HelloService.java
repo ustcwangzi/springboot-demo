@@ -1,7 +1,7 @@
 package com.wz.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.wz.IHelloservice;
+import com.wz.api.IHelloservice;
 import org.springframework.stereotype.Component;
 
 /**
