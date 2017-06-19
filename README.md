@@ -1,4 +1,3 @@
-# 技术交流群: 450331446
 # springboot-demo
 springboot demo：Springboot项目
 - springboot-mybatis-multidatasource：Mybatis多数据源
