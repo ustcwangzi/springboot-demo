@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wz.mapper.WalletMapper">
+  <resultMap id="BaseResultMap" type="com.wz.model.Wallet" >
+    <id column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="DOUBLE" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <select id="queryById" resultMap="BaseResultMap">
+    select userid,username,amount,update_time from wallet where userid = #{userid}
+  </select>
+
+  <select id="queryAmountById" resultType="java.lang.Double">
+    select amount from wallet where userid = #{userid}
+  </select>
+
+  <insert id="insert" parameterType="com.wz.model.Wallet" >
+    insert into wallet (userid,username,amount)
+    values (#{wallet.userid,jdbcType=VARCHAR}, #{wallet.username,jdbcType=VARCHAR}, #{wallet.amount,jdbcType=DOUBLE})
+  </insert>
+
+  <update id="updateAmount">
+    update wallet set amount = #{amount} where userid = #{userid}
+  </update>
+</mapper>

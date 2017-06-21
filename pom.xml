@@ -28,6 +28,8 @@
         <module>springboot-dubbo-two-consumer</module>
         <module>springboot-rocketmq-consumer</module>
         <module>springboot-rocketmq-producer</module>
+        <module>springboot-rocketmq-tx-producer</module>
+        <module>springboot-rocketmq-tx-consumer</module>
     </modules>
 
     <properties>
