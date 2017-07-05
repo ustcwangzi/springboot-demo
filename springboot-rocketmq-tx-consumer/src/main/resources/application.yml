@@ -17,3 +17,6 @@ spring:
 mybatis:
   mapperLocations: classpath*:com/wz/mapper/*.xml
   typeAliasesPackage: com.wz.model
+
+server:
+  port: 9009

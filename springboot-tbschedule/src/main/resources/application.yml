@@ -1,0 +1,10 @@
+tbschedule:
+  zkConnectString: 127.0.0.1:2181
+  rootPath: /tbschedule/demo
+  zkSessionTimeout: 60000
+  userName: admin
+  password: admin
+  isCheckParentPath: true
+
+server:
+  port: 9010
