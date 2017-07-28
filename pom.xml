@@ -31,6 +31,7 @@
         <module>springboot-rocketmq-tx-producer</module>
         <module>springboot-rocketmq-tx-consumer</module>
         <module>springboot-tbschedule</module>
+        <module>springboot-elastic-job</module>
     </modules>
 
     <properties>
@@ -52,9 +53,16 @@
 
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter</artifactId>
-        <version>1.5.2.RELEASE</version>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.5.RELEASE</version>
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
