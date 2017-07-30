@@ -11,8 +11,8 @@ import java.util.List;
 /**
  * Created by wangzi on 2017-07-05.
  */
-@Component("jobTest")
-public class TbJobTest implements IScheduleTaskDealMulti<String> {
+@Component("testJob")
+public class TestJob implements IScheduleTaskDealMulti<String> {
     @Override
     public List<String> selectTasks(String s, String s1, int i, List<TaskItemDefine> list, int i1) throws Exception {
         System.out.println("开始获取任务...");
@@ -28,6 +28,6 @@ public class TbJobTest implements IScheduleTaskDealMulti<String> {
     @Override
     public boolean execute(String[] strings, String s) throws Exception {
         System.out.println("正在运行任务：" + strings[0]);
-        return true;
+        return false;
     }
 }
