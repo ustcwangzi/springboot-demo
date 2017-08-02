@@ -7,6 +7,8 @@ import com.alibaba.rocketmq.client.consumer.listener.MessageListenerConcurrently
 import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.common.message.MessageExt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -16,12 +18,12 @@ import java.util.List;
  * Created by wangzi on 2017/5/13.
  */
 @Component
-public class MQConsumerTest {
+public class MQConsumerTest implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     private DefaultMQPushConsumer defaultMQPushConsumer;
 
-    @PostConstruct
-    public void consumer(){
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> messageExtList, ConsumeConcurrentlyContext consumeConcurrentlyContext) {

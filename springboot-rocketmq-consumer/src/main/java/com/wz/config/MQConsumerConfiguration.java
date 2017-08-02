@@ -18,15 +18,21 @@ import java.util.Map;
 public class MQConsumerConfiguration {
     private String nameServerAddress;
     private String subscriberID;
+    private String topic;
 
     @Bean
     public DefaultMQPushConsumer defaultMQPushConsumer(){
+        // 订阅id，如果同一个id部署了多个节点的话，不会重复消费（数据会分散到多个节点去处理）
+        // 如果是不同的id，则每个id消费的都是所有的数据
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(subscriberID);
         consumer.setNamesrvAddr(nameServerAddress);
         consumer.setMessageModel(MessageModel.CLUSTERING);
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
+        consumer.setVipChannelEnabled(false);
+        consumer.setPullBatchSize(2);
+        consumer.setConsumeMessageBatchMaxSize(200);
         try{
-            consumer.subscribe("TESTTOPIC", "*");
+            consumer.subscribe(topic, "*");
         }catch (MQClientException e){
             e.printStackTrace();
         }
@@ -49,4 +55,11 @@ public class MQConsumerConfiguration {
         this.subscriberID = subscriberID;
     }
 
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
 }

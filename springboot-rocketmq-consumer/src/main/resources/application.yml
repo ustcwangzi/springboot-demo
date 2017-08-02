@@ -2,5 +2,6 @@ server:
   port: 9009
 
 mq:
-  nameServerAddress: 10.10.45.32:9876;10.10.45.132:9876
-  subscriberID: TestConsuemr
+  nameServerAddress: 10.10.4.111:9876
+  subscriberID: CONSUMER_TEST
+  topic: TOPIC_TEST

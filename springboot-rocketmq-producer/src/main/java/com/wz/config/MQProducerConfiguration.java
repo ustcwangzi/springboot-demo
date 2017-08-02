@@ -21,6 +21,7 @@ public class MQProducerConfiguration {
         DefaultMQProducer producer = new DefaultMQProducer(producerGroup);
         producer.setNamesrvAddr(nameServerAddress);
         producer.setInstanceName(instanceName);
+        producer.setVipChannelEnabled(false);
         producer.start();
         return producer;
     }
