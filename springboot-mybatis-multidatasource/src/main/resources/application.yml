@@ -36,6 +36,3 @@ mybatis:
   secondary:
     mapperLocations: classpath*:com/wz/mapper/secondary/*.xml
     typeAliasesPackage: com.wz.model
-
-server:
-  port: 9001
