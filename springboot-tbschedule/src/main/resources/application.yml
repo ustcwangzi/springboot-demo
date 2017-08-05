@@ -6,3 +6,11 @@ job:
     userName: ScheduleAdmin
     password: password
     isCheckParentPath: true
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  maxWaitMillis: 5000
+  maxTotal: 1000
+  minIdle: 10
+  maxIdle: 20
