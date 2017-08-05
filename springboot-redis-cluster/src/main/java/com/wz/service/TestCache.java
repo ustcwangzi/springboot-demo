@@ -2,8 +2,7 @@ package com.wz.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -12,23 +11,20 @@ import java.util.Date;
 /**
  * Created by wangzi on 2017/4/23.
  */
-@RestController
+@Service
 @EnableCaching
 public class TestCache {
     @Autowired
     private CacheService cacheService;
 
-    @RequestMapping("get")
     public String query(int id){
         return "["+getDateNow()+"]:"+cacheService.query(id);
     }
 
-    @RequestMapping("put")
     public String add(int id, String value){
         return "["+getDateNow()+"]:"+cacheService.add(id ,value);
     }
 
-    @RequestMapping("del")
     public String delete(int id){
         cacheService.delete(id);
         return "["+getDateNow()+"]:"+id+" delete success";

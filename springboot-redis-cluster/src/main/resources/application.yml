@@ -4,6 +4,3 @@ redis:
   maxTotal: 1000
   minIdle: 10
   maxIdle: 20
-
-server:
-  port: 9002
