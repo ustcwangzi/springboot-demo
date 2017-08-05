@@ -15,7 +15,7 @@ import java.util.Arrays;
 @Component
 public class LogAspect {
 
-    @Pointcut("execution(* com.wz.controller..*.*(..))")
+    @Pointcut("execution(* com.wz.service..*.*(..))")
     public void logPointcut(){}
 
     @Before("logPointcut()")
