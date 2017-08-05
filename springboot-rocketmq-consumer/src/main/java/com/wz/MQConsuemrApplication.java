@@ -10,5 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MQConsuemrApplication {
     public static void main(String[] args) {
         SpringApplication.run(MQConsuemrApplication.class, args);
+        synchronized (MQConsuemrApplication.class){
+            while (true){
+                try{
+                    MQConsuemrApplication.class.wait();
+                }catch (Throwable throwable){
+                }
+            }
+        }
     }
 }

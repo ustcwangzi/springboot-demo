@@ -1,6 +1,3 @@
-server:
-  port: 9009
-
 mq:
   nameServerAddress: 10.10.4.111:9876
   subscriberID: CONSUMER_TEST
