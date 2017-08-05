@@ -6,6 +6,3 @@ spring:
     scan: com.wz.service
     registry:
       address: zookeeper://127.0.0.1:2181
-
-server:
-  port: 9005
