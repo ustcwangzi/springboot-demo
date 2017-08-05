@@ -1,4 +1,4 @@
-package com.wz.service;
+package com.wz.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
