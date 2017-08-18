@@ -8,3 +8,4 @@ springboot demo：Springboot项目
 - springboot-rocketmq-producer：RocketMQ生产者
 - springboot-rocketmq-consumer：RocketMQ消费者
 - springboot-tbschedule：TBSchedule
+- springboot-elasticsearch：Elasticsearch

@@ -1,0 +1,4 @@
+es:
+  cluster:
+    name: order
+    nodes: 10.9.20.66:9300,10.9.20.65:9300
