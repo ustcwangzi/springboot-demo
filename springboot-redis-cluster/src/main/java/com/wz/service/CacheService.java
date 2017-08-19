@@ -1,5 +1,10 @@
 package com.wz.service;
 
+import com.wz.util.LoadCallBack;
+import com.wz.util.RedisClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -17,8 +22,12 @@ import java.util.Map;
  */
 @Service
 public class CacheService {
+    private static final Logger logger = LoggerFactory.getLogger(CacheService.class);
     //用来模拟对数据库的操作
     private Map<Integer, String> dataMap = new HashMap<>();
+    private Integer count = 0;
+    @Autowired
+    private RedisClient client;
 
     @PostConstruct
     public void init(){
@@ -67,5 +76,29 @@ public class CacheService {
     private static String getDateNow(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return dateFormat.format(new Date());
+    }
+
+    public String query(){
+        String key = "wangzi-key";
+        return client.findCache(key, 3, String.class, new LoadCallBack<String>() {
+            @Override
+            public String load() {
+                logger.info("-----------no cache-----------");
+                try{
+                    //模拟查询数据库
+                    Thread.sleep(300);
+                    //记录查询数据库的次数
+                    count++;
+                    return "wangzi-value";
+                }catch (InterruptedException e){
+                    logger.error(e.getMessage());
+                }
+                return null;
+            }
+        });
+    }
+
+    public Integer getCount() {
+        return count;
     }
 }

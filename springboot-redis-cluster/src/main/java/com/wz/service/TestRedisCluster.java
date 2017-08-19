@@ -14,7 +14,7 @@ public class TestRedisCluster {
     @Autowired
     private JedisCluster jedisCluster;
 
-    @PostConstruct
+//    @PostConstruct
     public void run() {
         for (int i = 0; i < 100; i++) {
             //jedisCluster.set("redis"+i, "key"+i);
