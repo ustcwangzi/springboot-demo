@@ -30,6 +30,7 @@
         <module>springboot-rocketmq-producer</module>
         <module>springboot-tbschedule</module>
         <module>springboot-elasticsearch</module>
+        <module>springboot-custom-annotation</module>
     </modules>
 
     <properties>
