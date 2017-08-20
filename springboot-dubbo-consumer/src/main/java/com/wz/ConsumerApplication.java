@@ -1,7 +1,5 @@
 package com.wz;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.wz.api.UserService;
 import com.wz.service.UserConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

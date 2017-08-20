@@ -1,8 +1,8 @@
 package com.wz.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.wz.api.UserService;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by wangzi on 2017/4/20.
