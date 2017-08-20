@@ -13,7 +13,7 @@ public class HelloService implements IHelloservice {
     @Override
     public String sayHello(String name) {
         try{
-            Thread.sleep(3000);
+            Thread.sleep(2000);
         }catch (Exception e){}
         return "Hello "+name;
     }
