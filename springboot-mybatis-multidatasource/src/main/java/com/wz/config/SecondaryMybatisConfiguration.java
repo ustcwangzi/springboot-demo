@@ -30,6 +30,9 @@ public class SecondaryMybatisConfiguration {
         sessionFactoryBean.setDataSource(dataSource);
         sessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
         sessionFactoryBean.setTypeAliasesPackage(typeAliasesPackage);
+        org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration();
+        config.setLazyLoadingEnabled(true);
+        sessionFactoryBean.setConfiguration(config);
         return sessionFactoryBean;
     }
 
