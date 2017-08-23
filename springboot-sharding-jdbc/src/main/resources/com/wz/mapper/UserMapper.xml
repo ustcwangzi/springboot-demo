@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wz.mapper.UserMapper" >
+    <resultMap id="resultMap" type="com.wz.model.User" >
+        <id column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="columnsName">
+        user_id, name, age
+    </sql>
+
+    <insert id="insert">
+        insert into user (user_id, name, age) values (#{user.userId},#{user.name},#{user.age})
+    </insert>
+
+    <select id="findByIds" resultMap="resultMap">
+        select <include refid="columnsName"/> from user where user_id in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </select>
+
+</mapper>

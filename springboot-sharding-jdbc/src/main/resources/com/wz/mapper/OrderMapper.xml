@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wz.mapper.OrderMapper" >
+    <resultMap id="resultMap" type="com.wz.model.Order" >
+        <id column="order_id" property="orderId" jdbcType="BIGINT" />
+        <result column="sender" property="sender" jdbcType="VARCHAR" />
+        <result column="receiver" property="receiver" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="columnsName">
+        order_id, sender, receiver
+    </sql>
+
+    <insert id="insert">
+        insert into order (order_id, sender, receiver) values (#{order.orderId},#{order.sender},#{order.receiver})
+    </insert>
+
+    <select id="findByIds" resultMap="resultMap">
+        select <include refid="columnsName"/> from order where order_id in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </select>
+
+</mapper>

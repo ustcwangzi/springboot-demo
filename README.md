@@ -9,3 +9,5 @@ springboot demo：Springboot项目
 - springboot-rocketmq-consumer：RocketMQ消费者
 - springboot-tbschedule：TBSchedule
 - springboot-elasticsearch：Elasticsearch
+- springboot-custom-annotation：自定义开关注解
+- springboot-sharding-jdbc：ShardingJDBC
