@@ -4,6 +4,7 @@ import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
 import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.common.consumer.ConsumeFromWhere;
 import com.alibaba.rocketmq.common.protocol.heartbeat.MessageModel;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import java.util.Map;
 /**
  * Created by wangzi on 2017/5/13.
  */
+@Data
 @Configuration
 @ConfigurationProperties(prefix = "mq")
 public class MQConsumerConfiguration {
@@ -37,29 +39,5 @@ public class MQConsumerConfiguration {
             e.printStackTrace();
         }
         return consumer;
-    }
-
-    public String getNameServerAddress() {
-        return nameServerAddress;
-    }
-
-    public void setNameServerAddress(String nameServerAddress) {
-        this.nameServerAddress = nameServerAddress;
-    }
-
-    public String getSubscriberID() {
-        return subscriberID;
-    }
-
-    public void setSubscriberID(String subscriberID) {
-        this.subscriberID = subscriberID;
-    }
-
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
     }
 }
