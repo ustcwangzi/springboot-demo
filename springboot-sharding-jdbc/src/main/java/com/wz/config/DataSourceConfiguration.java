@@ -8,6 +8,7 @@ import com.dangdang.ddframe.rdb.sharding.api.strategy.database.DatabaseShardingS
 import com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrategy;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -29,11 +30,11 @@ import java.util.*;
  * 构建Sharding数据源
  * Created by wangzi on 2017-08-20.
  */
+@Slf4j
 @Configuration
 @MapperScan(basePackages = {"com.wz.mapper"})
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class})
 public class DataSourceConfiguration {
-    private static final Logger logger = LoggerFactory.getLogger(DataSourceConfiguration.class);
     private Map<String, DataSource> dataSourceMap;
     private String defaultDataSource;
     private List<TableConfig> tableConfigs;
@@ -84,7 +85,7 @@ public class DataSourceConfiguration {
                     .tableShardingStrategy(new TableShardingStrategy(config.getShardingColumn(),simpleShardingAlgorithm.getTableShardingAlgorithm()))
                     .build();
             tableRuleList.add(tableRule);
-            logger.info("Build ShardingDataSource: {}", config.getName());
+            log.info("Build ShardingDataSource: {}", config.getName());
         }
         ShardingRule shardingRule = ShardingRule.builder().dataSourceRule(dataSourceRule).tableRules(tableRuleList).build();
         return ShardingDataSourceFactory.createDataSource(shardingRule);

@@ -4,6 +4,7 @@ import com.dangdang.ddframe.rdb.sharding.api.ShardingValue;
 import com.dangdang.ddframe.rdb.sharding.api.strategy.database.SingleKeyDatabaseShardingAlgorithm;
 import com.dangdang.ddframe.rdb.sharding.api.strategy.table.SingleKeyTableShardingAlgorithm;
 import com.google.common.collect.Range;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.Set;
  * <p>分库分表规则</p>
  * Created by wangzi on 2017-08-22.
  */
+@Slf4j
 public class SimpleShardingAlgorithm {
     private TableConfig tableConfig;
     private DatabaseShardingAlgorithm dataBaseShardingAlgorithm = new DatabaseShardingAlgorithm();
@@ -32,7 +34,7 @@ public class SimpleShardingAlgorithm {
 
     /**
      * <p>分库规则</p>
-     * <p>分库分表键对tableSize取余得到表下标，表下标除总库数并向上取整得到库下标</p>
+     * <p>分库分表键对dbSize取余得到库下标</p>
      */
     class DatabaseShardingAlgorithm implements SingleKeyDatabaseShardingAlgorithm<Long> {
         /**
@@ -44,11 +46,10 @@ public class SimpleShardingAlgorithm {
          */
         @Override
         public String doEqualSharding(Collection<String> collection, ShardingValue<Long> shardingValue) {
-            Long tableSize = tableConfig.getSize(); //表数量
-            Long dataSize = (long) collection.size(); //库数量
+            Long dbSize = (long) collection.size(); //库数量
             Long value = Long.parseLong(shardingValue.getValue().toString()); //分库分表键
-            Long size = (dataSize & 1) == 0 ? dataSize : dataSize - 1; //判断库数量是奇数还是偶数
-            Long ds = (size == 0) ? 0 : (value % tableSize) / size;
+            Long ds = value % dbSize;
+            log.debug("key:{}, ds:{}", value, ds);
             return ShardingJbdcUtil.generationCurrentDataBaseName(ds);
         }
 
@@ -79,7 +80,7 @@ public class SimpleShardingAlgorithm {
 
     /**
      * <p>分表规则</p>
-     * <p>表的总数不变，因此直接用分库分表键对tableSize取余得到表下标</p>
+     * <p>分库分表键对tableSize取余得到表下标</p>
      */
     class TableShardingAlgorithm implements SingleKeyTableShardingAlgorithm<Long> {
         @Override
@@ -87,6 +88,7 @@ public class SimpleShardingAlgorithm {
             Long tableSize = tableConfig.getSize();
             Long value = Long.parseLong(shardingValue.getValue().toString());
             Long moduloValue = value % tableSize;
+            log.debug("key:{}, tb:{}", value, moduloValue);
             return ShardingJbdcUtil.generationCurrentTableName(shardingValue.getLogicTableName(), moduloValue, tableConfig.getFormat());
         }
 

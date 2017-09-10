@@ -26,6 +26,6 @@ public class ShardingJdbcApplication {
 
     @PostConstruct
     private void run(){
-        System.out.println(service.findByIds(Arrays.asList(1L)));
+        System.out.println(service.findByIds(Arrays.asList(1L, 2L)));
     }
 }
