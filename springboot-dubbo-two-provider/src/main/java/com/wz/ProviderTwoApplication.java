@@ -11,5 +11,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProviderTwoApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProviderTwoApplication.class, args);
+        synchronized (ProviderTwoApplication.class){
+            while (true){
+                try {
+                    ProviderTwoApplication.class.wait();
+                } catch (InterruptedException e) {
+                }
+            }
+        }
     }
 }
