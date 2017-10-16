@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 import redis.clients.jedis.JedisCluster;
 
 /**
- * 封装redis的操作，防止缓存穿透
- * Created by wangzi on 2017-08-19.
+ * <p>封装redis的操作，防止缓存穿透</p>
+ *
+ * @author wangzi
  */
 @Component
 public class RedisClient {

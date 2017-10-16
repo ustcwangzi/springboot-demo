@@ -1,8 +1,14 @@
 package com.wz.util;
 
 /**
- * Created by wangzi on 2017-08-19.
+ * <p></p>
+ *
+ * @author wangzi
  */
 public interface LoadCallBack<T> {
+    /**
+     * 回调
+     * @return
+     */
     T load();
 }

@@ -18,12 +18,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by wangzi on 2017/4/23.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Service
 public class CacheService {
     private static final Logger logger = LoggerFactory.getLogger(CacheService.class);
-    //用来模拟对数据库的操作
+    private static final int INIT_COUNT = 4;
+    /**
+     * 用来模拟对数据库的操作
+     */
     private Map<Integer, String> dataMap = new HashMap<>();
     private Integer count = 0;
     @Autowired
@@ -31,7 +36,7 @@ public class CacheService {
 
     @PostConstruct
     public void init(){
-        for(int i=1; i<4; i++){
+        for(int i=1; i<INIT_COUNT; i++){
             dataMap.put(i, "value"+i);
         }
     }

@@ -6,7 +6,9 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
- * Create by wangzi on 2017/8/5
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Component
 public class JedisClient {

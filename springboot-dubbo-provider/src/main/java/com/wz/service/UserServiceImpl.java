@@ -5,7 +5,9 @@ import com.wz.api.UserService;
 import com.wz.domain.User;
 
 /**
- * Created by wangzi on 2017/4/20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Service(version = "1.0.0")
 public class UserServiceImpl implements UserService{

@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by wangzi on 2017-08-20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Configuration
 public class TomcatConfiguration {

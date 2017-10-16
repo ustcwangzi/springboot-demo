@@ -45,10 +45,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * AnnotationBean
- * 
- * @author william.liangf
- * @export
+ * <p></p>
+ *
+ * @author wangzi
  */
 public class AnnotationBean extends AbstractConfig implements DisposableBean, BeanFactoryPostProcessor, BeanPostProcessor, ApplicationContextAware {
 

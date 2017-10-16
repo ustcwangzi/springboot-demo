@@ -8,12 +8,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by wangzi on 2017/5/13.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "mq")
-public class MQProducerConfiguration {
+public class MqProducerConfiguration {
     private String producerGroup;
     private String instanceName;
     private String nameServerAddress;

@@ -3,8 +3,9 @@ package com.wz.config;
 import lombok.Data;
 
 /**
- * <p>数据源字段信息</p>
- * Created by wangzi on 2017-08-20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Data
 public class MyBatisProperties {

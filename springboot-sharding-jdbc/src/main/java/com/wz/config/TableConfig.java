@@ -4,7 +4,8 @@ import lombok.Data;
 
 /**
  * <p>数据表属性信息</p>
- * Created by wangzi on 2017-08-22.
+ *
+ * @author wangzi
  */
 @Data
 public class TableConfig {

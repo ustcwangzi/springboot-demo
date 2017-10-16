@@ -15,13 +15,16 @@ import javax.annotation.PreDestroy;
 import java.net.InetAddress;
 
 /**
- * 初始化ES配置
- * Created by wangzi on 2017-08-18.
+ * <p>初始化ES配置</p>
+ *
+ * @author wangzi
  */
 @Component
 @Configuration
 public class ElasticsearchConfiguration {
     private static final Logger logger = LoggerFactory.getLogger(ElasticsearchConfiguration.class);
+    private static final String SPLIT_ADDRESS = ",";
+    private static final String SPLIT_NODES = ":";
     @Value("${es.cluster.nodes}")
     private String clusterNodes ;
     @Value("${es.cluster.name}")
@@ -35,8 +38,8 @@ public class ElasticsearchConfiguration {
         client = new PreBuiltTransportClient(settings);
         try {
             if (!"".equals(clusterNodes)){
-                for (String nodes:clusterNodes.split(",")) {
-                    String socket[] = nodes.split(":");
+                for (String nodes:clusterNodes.split(SPLIT_ADDRESS)) {
+                    String[] socket = nodes.split(SPLIT_NODES);
                     String address = socket[0];
                     Integer port = Integer.valueOf(socket[1]);
                     client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(address), port));

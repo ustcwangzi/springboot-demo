@@ -4,16 +4,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Created by wangzi on 2017/5/13.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @SpringBootApplication
-public class MQConsuemrApplication {
+public class MqConsuemrApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MQConsuemrApplication.class, args);
-        synchronized (MQConsuemrApplication.class){
+        SpringApplication.run(MqConsuemrApplication.class, args);
+        synchronized (MqConsuemrApplication.class){
             while (true){
                 try{
-                    MQConsuemrApplication.class.wait();
+                    MqConsuemrApplication.class.wait();
                 }catch (Throwable throwable){
                 }
             }

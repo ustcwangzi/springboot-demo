@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * <p></p>
+ *
+ * @author wangzi
+ */
 @SpringBootApplication
 public class ConsumerApplication {
 

@@ -15,10 +15,12 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
- * Created by wangzi on 2017/5/13.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Component
-public class MQConsumerTest implements ApplicationListener<ContextRefreshedEvent> {
+public class MqConsumerTest implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     private DefaultMQPushConsumer defaultMQPushConsumer;
 

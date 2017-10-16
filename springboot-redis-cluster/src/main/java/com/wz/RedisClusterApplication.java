@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 
 /**
- * Created by wangzi on 2017/4/23.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @SpringBootApplication
 public class RedisClusterApplication {
@@ -24,8 +26,6 @@ public class RedisClusterApplication {
 
     @PostConstruct
     public void test() throws Exception{
-//        cache.add(1, "aaa");
-//        System.out.println(cache.query(1));
         testCachePenetration.test();
     }
 }

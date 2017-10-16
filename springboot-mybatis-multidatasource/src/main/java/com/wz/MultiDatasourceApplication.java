@@ -12,7 +12,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import javax.annotation.PostConstruct;
 
 /**
- * Created by wangzi on 2017/4/23.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class })

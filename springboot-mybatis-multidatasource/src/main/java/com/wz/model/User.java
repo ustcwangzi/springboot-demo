@@ -3,7 +3,9 @@ package com.wz.model;
 import lombok.Data;
 
 /**
- * Created by wangzi on 2017/4/19.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Data
 public class User {

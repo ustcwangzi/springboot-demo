@@ -6,8 +6,9 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextClosedEvent;
 
 /**
+ * <p></p>
+ *
  * @author wangzi
- * Created by wangzi on 2017/4/20.
  */
 public class DubboHolderListener implements ApplicationListener{
     private static Thread holdThread;

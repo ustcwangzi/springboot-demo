@@ -6,8 +6,9 @@ import org.springframework.context.annotation.Import;
 import java.lang.annotation.*;
 
 /**
- * 自定义开关注解
- * Created by wangzi on 2017-08-20.
+ * <p>自定义开关注解</p>
+ *
+ * @author wangzi
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

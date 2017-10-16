@@ -27,8 +27,9 @@ import javax.sql.DataSource;
 import java.util.*;
 
 /**
- * 构建Sharding数据源
- * Created by wangzi on 2017-08-20.
+ * <p>构建Sharding数据源</p>
+ *
+ * @author wangzi
  */
 @Slf4j
 @Configuration

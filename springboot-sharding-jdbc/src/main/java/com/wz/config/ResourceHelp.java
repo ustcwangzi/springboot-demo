@@ -13,7 +13,8 @@ import java.util.List;
 
 /**
  * <p>加载资源文件工具类</p>
- * Created by wangzi on 2017-08-22.
+ *
+ * @author wangzi
  */
 public class ResourceHelp {
     private static final Logger logger = LoggerFactory.getLogger(ResourceHelp.class);

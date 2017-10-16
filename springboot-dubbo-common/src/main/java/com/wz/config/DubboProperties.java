@@ -6,7 +6,9 @@ import com.alibaba.dubbo.config.RegistryConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Created by wangzi on 2017/4/20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @ConfigurationProperties(prefix = "spring.dubbo")
 public class DubboProperties {

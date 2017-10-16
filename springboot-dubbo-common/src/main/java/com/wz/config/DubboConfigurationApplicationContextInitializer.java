@@ -6,8 +6,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
+ * <p></p>
+ *
  * @author wangzi
- * Created by wangzi on 2017/4/20.
  */
 public class DubboConfigurationApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     public DubboConfigurationApplicationContextInitializer() {

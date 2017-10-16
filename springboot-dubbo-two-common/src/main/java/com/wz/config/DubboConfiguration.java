@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by wangzi on 2017/4/21.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Configuration
 @ConditionalOnClass(Exporter.class)

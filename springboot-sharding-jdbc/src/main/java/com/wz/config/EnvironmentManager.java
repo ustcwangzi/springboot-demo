@@ -14,7 +14,8 @@ import java.util.Properties;
 /**
  * <p>加载配置，并根据运行环境获取配置</p>
  * <p>运行时通过 -Denv=dev 指定运行环境</p>
- * Created by wangzi on 2017-08-21.
+ *
+ * @author wangzi
  */
 public class EnvironmentManager {
     private static Logger logger = LoggerFactory.getLogger(EnvironmentManager.class);

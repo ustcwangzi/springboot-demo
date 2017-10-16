@@ -14,7 +14,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by wangzi on 2017/4/23.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Configuration
 public class JedisClusterConfig {

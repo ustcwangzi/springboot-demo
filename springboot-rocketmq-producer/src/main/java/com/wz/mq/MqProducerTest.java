@@ -1,23 +1,21 @@
 package com.wz.mq;
 
-import com.alibaba.rocketmq.client.exception.MQBrokerException;
-import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.alibaba.rocketmq.common.message.Message;
-import com.alibaba.rocketmq.remoting.exception.RemotingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-
 /**
- * Created by wangzi on 2017/5/13.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Component
-public class MQProducerTest  implements ApplicationListener<ContextRefreshedEvent> {
+public class MqProducerTest implements ApplicationListener<ContextRefreshedEvent> {
+    private static final int INIT_COUNT = 100;
     @Autowired
     private DefaultMQProducer defaultMQProducer;
     @Value("${mq.topic}")
@@ -28,7 +26,7 @@ public class MQProducerTest  implements ApplicationListener<ContextRefreshedEven
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         try{
-            for(int i=0; i<100; i++){
+            for(int i=0; i<INIT_COUNT; i++){
                 String content = "[" + i + "]: Hello, RocketMQ";
                 Message message = new Message(topic, tag, "MQ" + i, content.getBytes());
                 defaultMQProducer.send(message);

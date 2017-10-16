@@ -13,7 +13,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 /**
- * Created by wangzi on 2017/4/19.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Configuration
 @MapperScan(basePackages = {"com.wz.mapper.primary"}, sqlSessionFactoryRef = "primarySqlSessionFactory")

@@ -1,9 +1,13 @@
 package com.wz.service;
 
 /**
+ * <p></p>
+ *
  * @author wangzi
- * Created by wangzi on 2017-08-20.
  */
 public interface CustomService {
+    /**
+     * 业务处理
+     */
     void doSomething();
 }

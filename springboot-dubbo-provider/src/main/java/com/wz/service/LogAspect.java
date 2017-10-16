@@ -12,8 +12,9 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 /**
- * 记录方法名称、入参、耗时、出参、异常信息
- * Created by wangzi on 2017/4/18.
+ * <p>记录方法名称、入参、耗时、出参、异常信息</p>
+ *
+ * @author wangzi
  */
 @Aspect
 @Component

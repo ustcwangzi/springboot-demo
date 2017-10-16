@@ -12,12 +12,14 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Map;
 
 /**
- * Created by wangzi on 2017/5/13.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "mq")
-public class MQConsumerConfiguration {
+public class MqConsumerConfiguration {
     private String nameServerAddress;
     private String subscriberID;
     private String topic;

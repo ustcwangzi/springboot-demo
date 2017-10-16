@@ -8,14 +8,17 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Created by wangzi on 2017-08-19.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Component
 public class TestCachePenetration {
     private static final Logger logger = LoggerFactory.getLogger(TestCachePenetration.class);
+    private static final int INIT_COUNT = 10000;
     @Autowired
     private CacheService service;
-    private CountDownLatch latch = new CountDownLatch(10000);
+    private CountDownLatch latch = new CountDownLatch(INIT_COUNT);
 
     private class TestThread implements Runnable{
         @Override
@@ -30,9 +33,11 @@ public class TestCachePenetration {
         }
     }
 
-    //10000个线程同时进行缓存查询
+    /**
+     * 10000个线程同时进行缓存查询
+     */
     public void test() throws Exception{
-        for (int i=0; i<10000; i++){
+        for (int i=0; i<INIT_COUNT; i++){
             new Thread(new TestThread()).start();
             logger.info("====={}", i);
             latch.countDown();

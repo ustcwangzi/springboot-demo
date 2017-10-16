@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * <p>工具类，用以生成数据源名称和数据表名称</p>
- * Created by wangzi on 2017-08-22.
+ *
+ * @author wangzi
  */
 public class ShardingJbdcUtil {
     public static final String TABLE_FORMAT = "_%04d";

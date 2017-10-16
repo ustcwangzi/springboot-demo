@@ -5,11 +5,13 @@ import com.wz.api.IHelloservice;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by wangzi on 2017/4/21.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Component
 @Service(version = "1.0.0", timeout = 3000)
-public class HelloService implements IHelloservice {
+public class HelloServiceImpl implements IHelloservice {
     @Override
     public String sayHello(String name) {
         try{

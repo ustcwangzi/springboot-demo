@@ -1,8 +1,15 @@
 package com.wz.api;
 
 /**
- * Created by wangzi on 2017/4/21.
+ * <p></p>
+ *
+ * @author wangzi
  */
 public interface IHelloservice {
-    public String sayHello(String name);
+    /**
+     * 业务处理
+     * @param name
+     * @return
+     */
+    String sayHello(String name);
 }

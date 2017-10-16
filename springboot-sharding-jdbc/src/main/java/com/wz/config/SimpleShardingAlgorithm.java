@@ -12,7 +12,8 @@ import java.util.Set;
 
 /**
  * <p>分库分表规则</p>
- * Created by wangzi on 2017-08-22.
+ *
+ * @author wangzi
  */
 @Slf4j
 public class SimpleShardingAlgorithm {
@@ -46,8 +47,10 @@ public class SimpleShardingAlgorithm {
          */
         @Override
         public String doEqualSharding(Collection<String> collection, ShardingValue<Long> shardingValue) {
-            Long dbSize = (long) collection.size(); //库数量
-            Long value = Long.parseLong(shardingValue.getValue().toString()); //分库分表键
+            //库数量
+            Long dbSize = (long) collection.size();
+            //分库分表键
+            Long value = Long.parseLong(shardingValue.getValue().toString());
             Long ds = value % dbSize;
             log.debug("key:{}, ds:{}", value, ds);
             return ShardingJbdcUtil.generationCurrentDataBaseName(ds);

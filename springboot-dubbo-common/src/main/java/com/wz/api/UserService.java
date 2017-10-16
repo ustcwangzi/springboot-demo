@@ -3,8 +3,15 @@ package com.wz.api;
 import com.wz.domain.User;
 
 /**
- * Created by wangzi on 2017/4/20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 public interface UserService {
+    /**
+     * 根据id查找user
+     * @param id
+     * @return
+     */
     User queryById(int id);
 }

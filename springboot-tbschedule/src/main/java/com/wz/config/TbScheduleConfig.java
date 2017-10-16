@@ -9,7 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by wangzi on 2017-07-05.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Configuration
 public class TbScheduleConfig {
@@ -22,7 +24,7 @@ public class TbScheduleConfig {
             @Value("${job.zkConfig.password}")String password,
             @Value("${job.zkConfig.isCheckParentPath}")String isCheckParentPath) {
         TBScheduleManagerFactory tbScheduleManagerFactory = new TBScheduleManagerFactory();
-        Map<String, String> zkConfig = new HashMap<String, String>();
+        Map<String, String> zkConfig = new HashMap<>(10);
         zkConfig.put("zkConnectString", zkConnectString);
         zkConfig.put("rootPath", rootPath);
         zkConfig.put("zkSessionTimeout", zkSessionTimeout);

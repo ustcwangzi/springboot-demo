@@ -11,7 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 
 /**
- * Created by wangzi on 2017-08-18.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @SpringBootApplication
 public class ElasticsearchApplication {

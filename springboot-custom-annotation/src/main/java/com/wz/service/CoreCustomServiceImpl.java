@@ -1,8 +1,9 @@
 package com.wz.service;
 
 /**
+ * <p></p>
+ *
  * @author wangzi
- * Created by wangzi on 2017-08-20.
  */
 public class CoreCustomServiceImpl implements CustomService{
     @Override

@@ -5,10 +5,22 @@ import com.wz.model.User;
 import java.util.List;
 
 /**
- * Created by wangzi on 2017-08-22.
+ * <p></p>
+ *
+ * @author wangzi
  */
 public interface UserService {
+    /**
+     * 保存user
+     * @param user
+     * @return
+     */
     Integer insert(User user);
 
+    /**
+     * 根据id查找user
+     * @param ids
+     * @return
+     */
     List<User> findByIds(List<Long> ids);
 }

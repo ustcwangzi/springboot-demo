@@ -2,6 +2,7 @@ package com.wz;
 
 import com.wz.annotation.EnableCustomService;
 import com.wz.service.CustomService;
+import com.wz.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 
 /**
- * Created by wangzi on 2017-08-20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @SpringBootApplication
-@EnableCustomService("core")
+@EnableCustomService(Constants.POLICY_CORE)
 public class AnnotaionApplication {
     public static void main(String[] args) {
         SpringApplication.run(AnnotaionApplication.class, args);

@@ -13,7 +13,9 @@ import javax.annotation.PostConstruct;
 import java.util.Arrays;
 
 /**
- * Created by wangzi on 2017-08-20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @SpringBootApplication
 public class ShardingJdbcApplication {

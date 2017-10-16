@@ -5,7 +5,9 @@ import com.wz.api.UserService;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by wangzi on 2017/4/20.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Service
 public class UserConsumerService {

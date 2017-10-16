@@ -5,7 +5,9 @@ import com.wz.api.IHelloservice;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by wangzi on 2017/4/21.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Service
 public class HelloService {

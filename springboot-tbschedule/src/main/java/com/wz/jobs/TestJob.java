@@ -12,11 +12,14 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by wangzi on 2017-07-05.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Component("testJob")
 public class TestJob implements IScheduleTaskDealMulti<String> {
     private static final String SUFFIX_JOB = "tbschedule_";
+    private static final List<String> INIT_LIST = Arrays.asList("a", "b", "c");
     @Autowired
     private JedisClient jedis;
     @Override
@@ -26,7 +29,7 @@ public class TestJob implements IScheduleTaskDealMulti<String> {
         // 在获取不到任务时，执行将停止
         // 此处用Arrays.asList("a", "b", "c")来模拟从数据库取数据的情况
         // 同时在execute中将运行成功的任务放入redis
-        for (String id : Arrays.asList("a", "b", "c")){
+        for (String id : INIT_LIST){
             if (jedis.get(SUFFIX_JOB + id) == null){
                 tasks.add(id);
             }

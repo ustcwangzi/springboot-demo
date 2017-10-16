@@ -8,7 +8,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by wangzi on 2017-08-22.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Service
 public class UserServiceImpl implements UserService {

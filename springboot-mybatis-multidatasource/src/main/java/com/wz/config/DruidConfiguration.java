@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 /**
- * Created by wangzi on 2017/4/19.
+ * <p></p>
+ *
+ * @author wangzi
  */
 @Configuration
 public class DruidConfiguration {
