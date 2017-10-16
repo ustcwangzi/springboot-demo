@@ -36,9 +36,9 @@ public class ElasticsearchConfiguration {
         try {
             if (!"".equals(clusterNodes)){
                 for (String nodes:clusterNodes.split(",")) {
-                    String InetSocket[] = nodes.split(":");
-                    String address = InetSocket[0];
-                    Integer port = Integer.valueOf(InetSocket[1]);
+                    String socket[] = nodes.split(":");
+                    String address = socket[0];
+                    Integer port = Integer.valueOf(socket[1]);
                     client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(address), port));
                 }
             }

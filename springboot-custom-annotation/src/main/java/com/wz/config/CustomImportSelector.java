@@ -1,8 +1,8 @@
 package com.wz.config;
 
 import com.wz.annotation.EnableCustomService;
-import com.wz.service.CoreCustomService;
-import com.wz.service.SimpleCustomService;
+import com.wz.service.CoreCustomServiceImpl;
+import com.wz.service.SimpleCustomServiceImpl;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
@@ -18,8 +18,8 @@ public class CustomImportSelector implements ImportSelector {
                 EnableCustomService.class.getName()));
         String policy = attributes.getString("value");
         if ("core".equals(policy)){
-            return new String[]{CoreCustomService.class.getName()};
+            return new String[]{CoreCustomServiceImpl.class.getName()};
         }
-        return new String[]{SimpleCustomService.class.getName()};
+        return new String[]{SimpleCustomServiceImpl.class.getName()};
     }
 }

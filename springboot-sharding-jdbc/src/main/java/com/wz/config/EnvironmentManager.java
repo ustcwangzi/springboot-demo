@@ -20,7 +20,7 @@ public class EnvironmentManager {
     private static Logger logger = LoggerFactory.getLogger(EnvironmentManager.class);
     private static final String APP_PROPERTIES_ENV_PATH = "classpath*:META-INF/env-*.properties";
     private static final String APP_PROPERTIES_ENV_PATH_SUFFIX = ".properties";
-    private static final Map<String, Properties> propertiesMap = new HashMap<>();
+    private static final Map<String, Properties> PROPERTIES_MAP = new HashMap<>();
     private static Properties properties;
 
     public static final String SHARDING_DEFATULT_DS_INDEX = "sharding.defaultDSIndex";
@@ -51,7 +51,7 @@ public class EnvironmentManager {
                 for (Resource resource : resources) {
                     Properties props = new Properties();
                     props.load(resource.getInputStream());
-                    propertiesMap.put(getEnvPropertyFileName(resource), props);
+                    PROPERTIES_MAP.put(getEnvPropertyFileName(resource), props);
                 }
             }
         } catch (IOException e) {
@@ -70,7 +70,7 @@ public class EnvironmentManager {
 
     public static String getProperty(String key) {
         if (properties == null) {
-            properties = propertiesMap.get(getEnv());
+            properties = PROPERTIES_MAP.get(getEnv());
             if (properties == null) {
                 properties = new Properties();
             }

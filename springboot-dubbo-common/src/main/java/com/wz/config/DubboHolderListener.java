@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextClosedEvent;
 
 /**
+ * @author wangzi
  * Created by wangzi on 2017/4/20.
  */
 public class DubboHolderListener implements ApplicationListener{
@@ -15,15 +16,15 @@ public class DubboHolderListener implements ApplicationListener{
     public DubboHolderListener() {
     }
 
+    @Override
     public void onApplicationEvent(ApplicationEvent event) {
         if(event instanceof ApplicationPreparedEvent) {
-            if(running == Boolean.FALSE) {
+            if(running.equals(Boolean.FALSE)) {
                 running = Boolean.TRUE;
             }
 
             if(holdThread == null) {
-                holdThread = new Thread(new Runnable() {
-                    public void run() {
+                holdThread = new Thread(() -> {
                         System.out.println(Thread.currentThread().getName());
 
                         while(DubboHolderListener.running.booleanValue() && !Thread.currentThread().isInterrupted()) {
@@ -33,8 +34,6 @@ public class DubboHolderListener implements ApplicationListener{
                                 ;
                             }
                         }
-
-                    }
                 }, "Dubbo-Holder");
                 holdThread.setDaemon(false);
                 holdThread.start();

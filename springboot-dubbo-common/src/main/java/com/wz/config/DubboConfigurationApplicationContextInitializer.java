@@ -6,12 +6,14 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
+ * @author wangzi
  * Created by wangzi on 2017/4/20.
  */
 public class DubboConfigurationApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     public DubboConfigurationApplicationContextInitializer() {
     }
 
+    @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
         ConfigurableEnvironment env = applicationContext.getEnvironment();
         String scan = env.getProperty("spring.dubbo.scan");
