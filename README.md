@@ -7,7 +7,6 @@ springboot demo：Springboot项目
 - springboot-dubbo-two：Dubbo注解方式二
 - springboot-rocketmq-producer：RocketMQ生产者
 - springboot-rocketmq-consumer：RocketMQ消费者
-- springboot-tbschedule：TBSchedule
 - springboot-elasticsearch：Elasticsearch
 - springboot-custom-annotation：自定义开关注解
 - springboot-sharding-jdbc：ShardingJDBC
