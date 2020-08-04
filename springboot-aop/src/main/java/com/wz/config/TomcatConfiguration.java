@@ -1,7 +1,7 @@
 package com.wz.config;
 
-import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
-import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
+import org.springframework.boot.web.server.ConfigurableWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,9 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TomcatConfiguration {
     @Bean
-    public EmbeddedServletContainerFactory servletContainerFactory(){
-        TomcatEmbeddedServletContainerFactory containerFactory = new TomcatEmbeddedServletContainerFactory();
-        containerFactory.setPort(9999);
-        return containerFactory;
+    public WebServerFactoryCustomizer<ConfigurableWebServerFactory> servletContainerFactory() {
+        return factory -> factory.setPort(9999);
     }
 }
